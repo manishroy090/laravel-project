@@ -1,0 +1,116 @@
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(103, 97, 97);
+    height: 100vh;
+    width: 100vw;
+}
+.formcontainer{
+    background-color:#fff;
+    border-radius: 10px;
+}
+.img{
+    width: 25vw;
+    height: 80vh;
+    overflow: hidden;
+}
+img{
+    height: 100%;
+    width: 100%;
+    border-bottom-left-radius: 33px;
+}
+.formcontainer{
+    display: flex;
+    flex-direction: row;
+   
+}
+.logo{
+    display: flex;
+    flex-direction: row;
+ 
+    
+}
+.logo-icon{
+   position: relative;
+   top: 38px;
+ right: 30px;
+}
+#logo-icon{
+    position: relative;
+    top: 6px;
+  right: 3px;
+ }
+.icon{
+    font-size: 40px;
+}
+.logo>h1{
+    font-size: 2.5rem;
+
+}
+.heading{
+    font-size: 1.9rem;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    justify-content: center;
+    align-items: center;
+}
+.input-field{
+    background-color: rgb(255, 255, 255);
+    width: 29vw;
+    height: 6vh;
+    margin-top: 10px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    border-radius: 7px;
+    border: 1px solid black;
+}
+input{
+    border: none;
+    width: 25%;
+    height: 94%;
+    margin-left: 10px;
+    font-size: 1.2rem;
+    
+}
+
+.re-password>input{
+    width:45%;
+}
+input:focus{
+    outline: none;
+   
+}
+.subbtn{
+ 
+    background-color: rgb(13, 97, 207);
+    width: 31vw;
+    height: 8vh;
+    text-align: center;
+    border-radius: 8px;
+margin-top:30px ;
+position: relative;
+left: 10px;
+border: none;
+color: aliceblue;
+cursor: pointer;
+font-size: 1.2rem;
+}
+.subbtn:hover{
+    background-color: #65e10c;;
+   
+}
+a{
+    text-decoration: none;
+}
+
+.text-danger{
+    color: red;
+
+}
