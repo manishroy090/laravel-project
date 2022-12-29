@@ -19,7 +19,7 @@ return new class extends Migration
         $table->string('email', 60);
         $table->string('title', 100);
         $table->string('summary', 200);
-        $table->string('Description', 200);
+        $table->string('description', 200);
         $table->string('quality');
         $table->json('category');
         $table->date('expiry');

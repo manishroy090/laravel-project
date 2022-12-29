@@ -34,7 +34,7 @@ class viewcontroller extends Controller
         $product->email = $request['email'];
         $product->title = $request['title'];
         $product->summary = $request['summary'];
-        $product->Description = $request['Description'];
+        $product->description = $request['description'];
         $product->quality = $request['quality'];
         $getcatereq=$request->category;
         $category=implode(',', $getcatereq);

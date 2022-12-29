@@ -40,7 +40,7 @@
                         <td>{{$product->title}}</td>
                         <td>{{$product->summary}}</td>
                         <td>{{$product->expiry}}</td>
-                        <td>{{$product->Description}}</td>
+                        <td>{{$product->description}}</td>
                         <td> @if ($product->quality=="option1")
                             {{"Standard"}}
                             @else

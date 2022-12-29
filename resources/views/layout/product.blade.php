@@ -71,7 +71,7 @@
           
         <div class="form-group">
             <label for="description"> Description:</label>
-            <textarea class="form-control" id="description" rows="3" name="Description"></textarea>
+            <textarea class="form-control" id="description" rows="3" name="description"></textarea>
         </div>
         <span class="text-danger">
           @error('Description')

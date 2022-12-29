@@ -47,7 +47,7 @@
         <div class="form-group">
             <label for="description"> Description:</label>
             <textarea class="form-control" id="description" rows="3" name="Description" >
-                {{$product->Description}}
+                {{$product->description}}
             </textarea>
         </div>
         <div class="col-md-9">
