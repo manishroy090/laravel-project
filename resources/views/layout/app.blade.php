@@ -15,6 +15,11 @@
 
 <body>
   @include('layout.nav')
+  @if(session('msg'))
+  <div class="alert alert-success" role="alert">
+   {{session('msg')}}
+   <div>
+  @endif
   @yield('main')
 </body>
 

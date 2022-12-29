@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS v5.2.1 -->
- 
+  <link rel="stylesheet" href="{{asset('cssfile/product.css')}}" />
    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css" integrity="sha512-ARJR74swou2y0Q2V9k0GbzQ/5vJ2RBSoCWokg4zkfM29Fb3vZEQyv0iWBMW/yvKgyHSR/7D64pFMmU8nYmbRkg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -23,9 +23,12 @@
 
 <body>
   @include('layout.nav')
+  @if (session('msg'))
   <div class="alert alert-success" role="alert">
- {{$msg}}
+{{session('msg')}}
   </div>
+  @endif
+  
   <div class="container">
   
     <form class="row g-3" action="{{url('/')}}/storeproduct" method="post" enctype="multipart/form-data">
@@ -36,7 +39,7 @@
       
             
     
-        <div class="col-md-4">
+        <div class="col-md-12">
             <label for="inputtitle" class="form-label">Email:</label>
             <input type="email" class="form-control" id="inputtitle" name="email">
           </div>
@@ -45,19 +48,37 @@
             {{$message}}
             @enderror
           </span>
-        <div class="col-md-4">
+        <div class="col-md-12">
           <label for="inputtitle" class="form-label">Title:</label>
           <input type="text" class="form-control" id="inputtitle" name="title" value="">
         </div>
+        <span class="text-danger">
+          @error('title')
+          {{$message}}
+          @enderror
+        </span>
+        
         
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Summary:</label>
             <textarea class="form-control" id="summary" rows="3" name="summary"></textarea>
           </div>
+          <span class="text-danger">
+            @error('summary')
+            {{$message}}
+            @enderror
+          </span>
+          
         <div class="form-group">
             <label for="description"> Description:</label>
             <textarea class="form-control" id="description" rows="3" name="Description"></textarea>
         </div>
+        <span class="text-danger">
+          @error('Description')
+          {{$message}}
+          @enderror
+        </span>
+        
         <div class="col-md-9">
         <fieldset class="row mb-3">
             <legend class="col-form-label col-sm-2 pt-0">Quality:</legend>
@@ -78,6 +99,12 @@
             </div>
           </fieldset>
         </div>
+
+        <span class="text-danger">
+          @error('quality')
+          {{$message}}
+          @enderror
+        </span>
         <div class="multi_select_box">
        
           <select  class="multi_select" multiple name="category[]" >
@@ -88,10 +115,18 @@
             <option value="women wear">Women Wear</option>
           </select>
           </div>
+
+          <span class="text-danger">
+            @error('category')
+            {{$message}}
+            @enderror
+          </span>
+          
             <div class="col-md-6">
                 <label for="inputimage" class="form-label">Product_img:</label>
                 <input type="file" class="form-control" id="inputimage" name="img">
               </div>
+             
               <div class="col-md-4 mt-2">
                 <label for="date" class=" col-form-label">Expiry Date</label>
                 <div class="col-sm-8">
@@ -106,6 +141,7 @@
                     </div>
                 </div>
             </div>
+            
              
               <div class="d-grid gap-2 mt-4 mb-4">
  

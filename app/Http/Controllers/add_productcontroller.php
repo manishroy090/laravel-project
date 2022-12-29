@@ -14,7 +14,10 @@ class add_productcontroller extends Controller
       //validate
         $request->validate([
             'email'=>'required|email',
+            'title'=>'required',
              'Description'=>'required',
+             'summary'=>'required',
+             'quality'=>'required',
              'img'=>'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
              'category'=>'required'
         ]);
@@ -34,7 +37,8 @@ class add_productcontroller extends Controller
         $request->file('img')->storeAs('uploads',$filename,'public');
         $product->img = $filename;
         $product->save();
-        return redirect("/view");
+        //return redirect("");
+        return redirect()->intended('/view')->with('msg', 'Product added');
 
     }
     public function view(){

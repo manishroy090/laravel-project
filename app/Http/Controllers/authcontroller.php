@@ -35,26 +35,16 @@ class authcontroller extends Controller
         $users->password=hash::make($request['password']);
         $users->conpass=hash::make($request['conpass']);
         $users->save();
-
-        return redirect('login');
+        ;
+        return redirect()->intended('login')->with('msg', 'Account Registered!');
     }
 
     public function login_view()
     {
-        $msg = "account created scussfully";
-        $data = compact('msg');
-        return view('auth.login')->with($data);
+        return view('auth.login');
     }
     public function login(Request $request)
     {
-        /* $request->validate([
-             'email' => 'required|email',
-             'password' => 'required'
-         ]);
-
-
-         echo "<pre>";
-         print_r($request->toArray());*/
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
@@ -63,7 +53,7 @@ class authcontroller extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('addprdouct');
+            return redirect()->intended('addprdouct')->with('msg', 'Sucessfully LOGED In!');
         }
 
         return back()->withErrors([
@@ -85,6 +75,6 @@ class authcontroller extends Controller
     {
         Session::flush();
         Auth::logout();
-        return redirect('/');
+        return redirect('/')->with('msg','Logged OUT');
     }
 }

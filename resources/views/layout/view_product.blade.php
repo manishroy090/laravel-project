@@ -7,9 +7,12 @@
     </head>
     <body>
         @include('layout.nav')
-        <div class="alert alert-success" role="alert">
-            {{$msg}}
-             </div>
+       @if(session('msg'))
+       <div class="alert alert-success" role="alert">
+        {{$msg}}
+         </div>
+       @endif
+       
       
         <div class="container">
             <table class="table table-primary" id="producttable">

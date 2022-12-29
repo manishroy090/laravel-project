@@ -14,9 +14,12 @@
 
   </head>
   <body>
+    @if (session('msg'))
     <div class="alert alert-success" role="alert">
-      {{$msg}}
-       </div>
+    {{session('msg')}}
+    </div>
+    @endif
+    
     <section>
       <div class="formcontainer">
         <div class="img">
