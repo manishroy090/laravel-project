@@ -6,6 +6,7 @@
 
     </head>
     <body>
+        @include('layout.nav')
         <div class="alert alert-success" role="alert">
             {{$msg}}
              </div>
@@ -26,41 +27,36 @@
                         <th scope="col"> Quality</th>
                         <th scope="col"> Category</th>
                         <th scope="col"> Action</th>
-                       
-                       
-                       
                     </tr>
                 </thead>
-                <tbody>
-                    
+                <tbody> 
                     @foreach ($products as $product)
-                        
-                  
-                    <tr class="">
-                        <td scope="row">ll</td>
-         <td><img src="{{asset('/storage/uploads/'.$product->img)}}" style="width: 100px; height: 100px"/></td>
+                    <tr>
+                        <td>SN</td>
+                        <td><img src="{{asset('/storage/uploads/'.$product->img)}}" style="width: 100px; height: 100px"/></td>
                         <td>{{$product->title}}</td>
                         <td>{{$product->summary}}</td>
                         <td>{{$product->expiry}}</td>
                         <td>{{$product->Description}}</td>
-                        <td>@if ($product->quality=="option1")
+                        <td> @if ($product->quality=="option1")
                             {{"Standard"}}
                             @else
                             {{"premium"}}
                             
                         @endif
-                        </td>
-                        @foreach ($product->category as $category)
-                        <td>{{$category}}</td>
-                        @endforeach
+                    </td>
+                    
+                        <td>  {{$product->category}}</td>
+                      
                         <td>
-                          <a href="{{route('delete',['id'=>$product->Product_id])}}">
-                            <button class="btn btn-danger">Delete</button>
-                          </a>
-                           <a href="{{route('edit',['id'=>$product->Product_id])}}">
-                            <button class="btn btn-primary">Edit</button>
-                           </a>
+                            <a href="{{route('delete',['id'=>$product->Product_id])}}">
+                                <button class="btn btn-danger">Delete</button>
+                              </a>
+                               <a href="{{route('edit',['id'=>$product->Product_id])}}">
+                                <button class="btn btn-primary">Edit</button>
+                               </a>
                         </td>
+
                     </tr>
                     @endforeach
                 </tbody>

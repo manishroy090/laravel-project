@@ -70,11 +70,14 @@
             </div>
           </fieldset>
         </div>
+
+       
+        
 <div class="multi_select_box">
           <select  class="multi_select" multiple name="category[]">
-            @foreach ($product->category as $category)
-            <option value="" selected disabled >{{$category}}</option>
-            @endforeach  
+            <option value="{{old($product->category)}}" disabled >{{$product->category}}</option>
+           
+            
             <option value="Winter">Winter</option>
             <option value="summer">Summer</option>
             <option value="men wear">Men wear</option>
@@ -83,7 +86,7 @@
           </div>
           <div class="col-md-6">
                 <label for="inputimage" class="form-label">Product_img:</label>
-                <input type="file" class="form-control" id="inputimage" name="img" >
+                <input type="file" class="form-control" id="inputimage" name="img" value="{{old('img')}}" >
                 <img src="{{asset('/storage/uploads/'.$product->img)}}" style="width: 100px; height: 100px"/>         
               </div>
               <div class="col-md-4 mt-2">

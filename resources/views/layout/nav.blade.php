@@ -32,11 +32,10 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{route('login')}}">Login</a>
-            </li>
-           
-            @else
+            </li>   
+           @else
             <li class="nav-item active">
-              <a class="nav-link" href="{{route('addproduct')}}">Add_Product</a>
+              <a class="nav-link" href="{{route('addproductview')}}">Add_Product</a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="{{route('view')}}">Product</a>
@@ -44,9 +43,8 @@
             <li class="nav-item">
               <a class="nav-link" href="{{route('logout')}}">Logout</a>
             </li>
-            @endguest
-           
-           
+           @endguest
+          </ul>
            
             
         </div>

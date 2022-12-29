@@ -28,7 +28,7 @@
   </div>
   <div class="container">
   
-    <form class="row g-3" action="{{$url}}" method="post" enctype="multipart/form-data">
+    <form class="row g-3" action="{{url('/')}}/storeproduct" method="post" enctype="multipart/form-data">
         @csrf
        
           <h1 class="text-center text-primary ">{{$title}} </h1>
@@ -40,7 +40,8 @@
             <label for="inputtitle" class="form-label">Email:</label>
             <input type="email" class="form-control" id="inputtitle" name="email">
           </div>
-          <span class="text-danger">@error('email')
+          <span class="text-danger">
+            @error('email')
             {{$message}}
             @enderror
           </span>
@@ -78,7 +79,8 @@
           </fieldset>
         </div>
         <div class="multi_select_box">
-          <select  class="multi_select" multiple name="category[]">
+       
+          <select  class="multi_select" multiple name="category[]" >
             <option value="" selected disabled >Category</option>
             <option value="Winter">Winter</option>
             <option value="summer">Summer</option>

@@ -7,13 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class product extends Model
 {
-     protected $table = 'products';
+    use HasFactory;
+    protected $table = 'products';
     protected $primaryKey = 'Product_id';
     protected $casts = [
         'category'=>'array'
 
     ];
-
-
-    use HasFactory;
 }
