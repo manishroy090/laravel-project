@@ -75,13 +75,16 @@
         
 <div class="multi_select_box">
           <select  class="multi_select" multiple name="category[]">
-            <option value="{{old($product->category)}}" disabled >{{$product->category}}</option>
-           
             
-            <option value="Winter">Winter</option>
-            <option value="summer">Summer</option>
-            <option value="men wear">Men wear</option>
-            <option value="women wear">Women Wear</option>
+            <option value="{{$product->category}}" disabled>{{$product->category}}</option>
+           
+            @php
+                $product_category = explode(',', $product->category);
+            @endphp
+            <option {{in_array('Winter', $product_category) ? 'selected' : '' }} value="Winter">Winter</option>
+            <option {{in_array('summer', $product_category) ? 'selected' : '' }} value="summer">Summer</option>
+            <option {{in_array('men wear', $product_category) ? 'selected' : '' }} value="men wear">Men wear</option>
+            <option {{in_array('women wear', $product_category) ? 'selected' : '' }} value="women wear">Women Wear</option>
           </select>
           </div>
           <div class="col-md-6">
