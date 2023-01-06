@@ -56,7 +56,7 @@
           <div class="input-field re-password">
             <i class="fa-solid fa-lock" id="rp"></i>
             <input type="password" placeholder="Re-type password" id="repassword" name="conpass" autocomplete="" />
-            <span class="text-danger"> @error('conpass')
+            <span class="conerr"> @error('conpass')
               {{$message}}
                @enderror</span>        
                 </div>

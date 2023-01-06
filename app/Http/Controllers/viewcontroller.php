@@ -17,7 +17,7 @@ class viewcontroller extends Controller
     public function edit($id)
     {
         $product= Product::where("Product_id", $id);
-        if (is_null($product)) {
+        if (is_null($product)){
             return redirect('view');
         } else {
             $product= Product::where("Product_id", $id)->first();

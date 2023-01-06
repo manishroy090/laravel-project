@@ -28,6 +28,11 @@ class authcontroller extends Controller
             'conpass'=>'required|same:password'
 
 
+        ], [
+            'required'=>'*:attribute is required',
+            'email.unique'=>'email already exits',
+            'conpass.same' => 'Confirm password must be same',
+           
         ]);
         $users = new User();
         $users->name=$request['name'];
